@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(./image/battle-field.png)
+        }
+        
+        .fader-hero {
+            opacity: 0.4
+        }
+        
+        .fader-enemy {
+            opacity: 0.4
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="characters" class="row">
+
+        </div>
+        <div id="battle-field" class="row">
+            <div class='col col-md-4 my-hero'>
+            </div>
+            <div class='col col-md-4 battle-field'>
+                <p id="dis-attack" class="bg-light"></p>
+                <p id="dis-counterAttack" class="bg-light"></p>
+                <button id='attack' class='btn btn-primary'>Attack</button>
+
+            </div>
+            <div class='col col-md-4 my-enemy ml-auto'>
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./assets/myscript.js"></script>
+
+</body>
+
+</html>
