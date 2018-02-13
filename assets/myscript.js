@@ -30,7 +30,7 @@ $(document).ready(function() {
         strength: "20",
         image: "./image/Yoda.jpg"
     }, {
-        name: "CaptainPanaka",
+        name: "Captain Panaka",
         hp: "30",
         strength: "30",
         image: "./image/CaptainPanaka.jpg"
@@ -50,7 +50,7 @@ $(document).ready(function() {
             // generate character
         for (i = 0; i < charArr.length; i++) {
             var num = Math.floor(12 / charArr.length)
-            var charThing = $("<div class='myChar col-md-" + num + "' value ='" + i + "'><img src='" + charArr[i].image + "'Style = 'width:150px; height: 150px;'/></div>")
+            var charThing = $("<div class='myChar col-md-" + num + " mb-3' value ='" + i + "'><p class = 'text-light text-center'>'" + charArr[i].name + "'</p><br><img src='" + charArr[i].image + "'Style = 'width:150px; height: 150px;' class = 'rounded-circle'/></div>")
             $("#characters").append(charThing)
         }
         $(".battle-field").hide()
@@ -63,7 +63,7 @@ $(document).ready(function() {
             heroAttack = chosenHero.strength
             isHeroChosen = true
             isHeroAlive = true
-            $(this).addClass("fader-hero")
+            $(this).addClass("fader")
             var myHero = $("<img src='" + chosenHero.image + "'style = 'width:250px; height: 250px;'/>")
             $(".my-hero").append(myHero)
 
@@ -75,7 +75,7 @@ $(document).ready(function() {
             enemyAttack = chosenEnemy.strength
             isEnemyChosen = true
             isEnemyAlive = true
-            $(this).addClass("fader-enemy")
+            $(this).addClass("fader")
             var myEnemy = $("<img src='" + chosenEnemy.image + "'style = 'width:250px; height: 250px;'/>")
             $(".my-enemy").append(myEnemy)
         }
@@ -88,7 +88,6 @@ $(document).ready(function() {
             var counterAttack = Math.floor(Math.random() * enemyAttack)
             heroLife -= counterAttack
             enemyLife -= attack
-            console.log(chosenHero)
 
             if ((isHeroAlive) && (heroLife <= 0)) {
                 alert("You lose")
@@ -100,15 +99,15 @@ $(document).ready(function() {
                 initGame()
                 isHeroAlive = false
                 isEnemyAlive = false
-                $("p").empty()
+                $(".bg-light").empty()
             } else if ((isEnemyAlive) && (enemyLife <= 0)) {
                 alert("You win!")
                 heroLife += 20
-                console.log(heroLife)
+
                 $(".my-enemy").empty()
                 isEnemyChosen = false
                 isEnemyAlive = false
-                $("p").empty()
+                $(".bg-light").empty()
             } else {
                 var disAttack = $("#dis-attack").text("Attack: " + attack)
                 var disCounterAttack = $("#dis-counterAttack").text("Counter Atack: " + counterAttack)
@@ -116,9 +115,10 @@ $(document).ready(function() {
             }
         } else {
             alert("Please chose your next Enemy")
-            $("p").empty()
+            $(".bg-light").empty()
         }
 
 
     })
 })
+``
